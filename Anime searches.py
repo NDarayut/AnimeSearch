@@ -14,13 +14,13 @@ def topanime():
   r = requests.get(top)
   data_top = r.json()
   
-  for item in data_top["data"]:
-    title = item["title"]
-    studios = item["studios"][0]["name"]
-    eps = item["episodes"]
-    anime_info = f"Title: {title} \nStudios: {studios}\nEpisodes: {eps}"
-    print()
-    print(anime_info)
+  for item in range(10):
+      title = data_top["data"][2]["title"]
+      studios = data_top["data"][8]["studios"][0]["name"]
+      eps = data_top["data"][3]["episodes"]
+      anime_info = f"Title: {title} \nStudios: {studios}     \nEpisodes: {eps}"
+      print()
+      print(anime_info)
   
 
 
@@ -39,8 +39,8 @@ def anime_rec():
   
 #asking user
 def ask_user():
-  print("1) Top anime recommendation \n2) Anime recommendation")
-  user_response = float(input("> "))
+  print("1) Top 10 anime recommendation \n2) Anime recommendation")
+  user_response = int(input("> "))
   if user_response == 1:
     print()
     topanime()
