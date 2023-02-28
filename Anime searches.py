@@ -14,10 +14,10 @@ def topanime():
   r = requests.get(top)
   data_top = r.json()
   
-  for item in range(10):
-      title = data_top["data"][2]["title"]
-      studios = data_top["data"][8]["studios"][0]["name"]
-      eps = data_top["data"][3]["episodes"]
+ for item in data_top["data"]:
+      title = item["title"]
+      studios = item["studios"][0]["name"]
+      eps = item["episodes"]
       anime_info = f"Title: {title} \nStudios: {studios}     \nEpisodes: {eps}"
       print()
       print(anime_info)
