@@ -23,8 +23,11 @@ def topanime():
       studios = item["studios"][0]["name"]
       eps = item["episodes"]
       anime_info = f"Title: {title} \nStudios: {studios}     \nEpisodes: {eps}"
-      os.system('cls')
+      print()
       print(anime_info)
+  else:
+      os.system('cls')
+      topanime()
     
 
 
